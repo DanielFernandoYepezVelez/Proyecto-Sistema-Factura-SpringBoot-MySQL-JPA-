@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
-public class UploadServiceImpl implements IUploadFileService {
+public class UploadFileServiceImpl implements IUploadFileService {
     private final static String UPLOAD_DIRECTORY = "uploads";
-    private final Logger log = LoggerFactory.getLogger(UploadServiceImpl.class);
+    private final Logger log = LoggerFactory.getLogger(UploadFileServiceImpl.class);
 
     @Override
     public Resource loadImage(String photoName) throws MalformedURLException {
