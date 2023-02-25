@@ -19,3 +19,14 @@ INSERT INTO `clients` (name, last_name, email, created_at, photo, region_id) VAL
 INSERT INTO `clients` (name, last_name, email, created_at, photo, region_id) VALUES ('Camila', 'Restrepo', 'restrecamila@gmail.com', '2021-09-21', '', 8);
 INSERT INTO `clients` (name, last_name, email, created_at, photo, region_id) VALUES ('Mariela', 'Lopez', 'mariela@gmail.com', '2021-06-22', '', 1);
 INSERT INTO `clients` (name, last_name, email, created_at, photo, region_id) VALUES ('Candy', 'Arizona', 'candy@gmail.com', '2023-01-19', '', 2);
+
+/* Creamos Algunos Usuarios Con Sus Respectivos Roles */
+INSERT INTO `users` (username, password, enabled) VALUES ('daniel', '$2a$10$mpz5cLJgSkk4fl.kQVNGuO9yi5bHs5a.1dZPpLKMT6E7eKagZKv0C', 1);
+INSERT INTO `users` (username, password, enabled) VALUES ('admin', '$2a$10$PaVuVfONfXxFLZ3Ld.jVRe.6PbdsEZZ5/3Rcqw/7Me8Kpp/68uoXq', 1);
+
+INSERT INTO `roles` (name) VALUES ('ROLE_USER');
+INSERT INTO `roles` (name) VALUES ('ROLE_ADMIN');
+
+INSERT INTO `users_roles` (user_id, role_id) VALUES (1, 1);
+INSERT INTO `users_roles` (user_id, role_id) VALUES (2, 2);
+INSERT INTO `users_roles` (user_id, role_id) VALUES (2, 1);

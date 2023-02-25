@@ -332,7 +332,6 @@ public class ClientController {
 		
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
-	
 	@GetMapping("/uploads/image/{photoName:.+}")
 	public ResponseEntity<Resource> photoView(@PathVariable String photoName) {
 		Resource resource = null;

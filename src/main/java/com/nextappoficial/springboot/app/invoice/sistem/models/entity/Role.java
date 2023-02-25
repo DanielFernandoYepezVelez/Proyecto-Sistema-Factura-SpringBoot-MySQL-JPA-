@@ -24,7 +24,7 @@ public class Role implements Serializable {
 	private String name;
 	
 	/* @ManyToMany(mappedBy = "roles")
-	private List<User> users; NO ES NECESARIO PARA ESTE EJEMPLO */
+	private List<UserAuth> users; NO ES NECESARIO PARA ESTE EJEMPLO */
 
 	public Long getId() {
 		return id;

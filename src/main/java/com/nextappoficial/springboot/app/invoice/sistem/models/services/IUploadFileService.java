@@ -5,8 +5,10 @@ import java.net.MalformedURLException;
 import java.nio.file.Path;
 
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+@Component
 public interface IUploadFileService {
 	
 	public Resource loadImage(String photoName) throws MalformedURLException;
