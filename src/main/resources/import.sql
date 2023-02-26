@@ -21,8 +21,8 @@ INSERT INTO `clients` (name, last_name, email, created_at, photo, region_id) VAL
 INSERT INTO `clients` (name, last_name, email, created_at, photo, region_id) VALUES ('Candy', 'Arizona', 'candy@gmail.com', '2023-01-19', '', 2);
 
 /* Creamos Algunos Usuarios Con Sus Respectivos Roles */
-INSERT INTO `users` (username, password, enabled) VALUES ('daniel', '$2a$10$mpz5cLJgSkk4fl.kQVNGuO9yi5bHs5a.1dZPpLKMT6E7eKagZKv0C', 1);
-INSERT INTO `users` (username, password, enabled) VALUES ('admin', '$2a$10$PaVuVfONfXxFLZ3Ld.jVRe.6PbdsEZZ5/3Rcqw/7Me8Kpp/68uoXq', 1);
+INSERT INTO `users` (name, last_name, username, password, email, enabled) VALUES ('Daniel Fernando', 'Yepez Velez', 'daniel', '$2a$10$mpz5cLJgSkk4fl.kQVNGuO9yi5bHs5a.1dZPpLKMT6E7eKagZKv0C', 'danipez.02@gmail.com', 1);
+INSERT INTO `users` (name, last_name, username, password, email, enabled) VALUES ('Maria Helena', 'Gomez Rojas', 'admin', '$2a$10$PaVuVfONfXxFLZ3Ld.jVRe.6PbdsEZZ5/3Rcqw/7Me8Kpp/68uoXq', 'mariah.02@gmail.com', 1);
 
 INSERT INTO `roles` (name) VALUES ('ROLE_USER');
 INSERT INTO `roles` (name) VALUES ('ROLE_ADMIN');

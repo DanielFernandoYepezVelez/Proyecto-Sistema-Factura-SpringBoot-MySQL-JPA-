@@ -20,16 +20,23 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "users")
 public class UserAuth implements Serializable {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	private String name;
+
+	@Column(name = "last_name")
+	private String lastName;
 
 	@Column(unique = true, length = 40)
 	private String username;
 
 	@Column(length = 70)
 	private String password;
+
+	@Column(unique = true)
+	private String email;
 
 	private Boolean enabled;
 
@@ -48,6 +55,22 @@ public class UserAuth implements Serializable {
 		this.id = id;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -62,6 +85,14 @@ public class UserAuth implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Boolean getEnabled() {

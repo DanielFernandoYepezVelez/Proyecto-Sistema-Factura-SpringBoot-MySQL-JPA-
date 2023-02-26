@@ -18,12 +18,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserDetailsService {
+public class UserServiceImpl implements IUserService, UserDetailsService {
 
     @Autowired
     private IUserDao userDao;
 
-    private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
     @Transactional(readOnly = true)
@@ -46,4 +46,9 @@ public class UserServiceImpl implements UserDetailsService {
                 authorities);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public UserAuth findByUsername(String username) {
+        return userDao.findByUsername(username);
+    }
 }
