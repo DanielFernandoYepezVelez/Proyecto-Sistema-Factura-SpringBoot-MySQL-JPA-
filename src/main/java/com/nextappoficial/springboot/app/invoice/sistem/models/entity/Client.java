@@ -1,19 +1,12 @@
 package com.nextappoficial.springboot.app.invoice.sistem.models.entity;
 
+import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -55,7 +48,14 @@ public class Client implements Serializable {
 	@JoinColumn(name = "region_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Region region;
-	
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "client", cascade = CascadeType.ALL)
+	private List<Invoice> invoices;
+
+	public Client() {
+		invoices = new ArrayList<>();
+	}
+
 	/* Este Metodo Se Activa Antes De Que Los Datos Se Inserten En La Base De Datos */
 	/* @PrePersist
 	public void prePersist() {
@@ -118,5 +118,14 @@ public class Client implements Serializable {
 		this.region = region;
 	}
 
+	public List<Invoice> getInvoices() {
+		return invoices;
+	}
+
+	public void setInvoices(List<Invoice> invoices) {
+		this.invoices = invoices;
+	}
+
+	@Serial
 	private static final long serialVersionUID = 1L;
 }

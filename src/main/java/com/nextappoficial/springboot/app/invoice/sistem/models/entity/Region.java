@@ -1,5 +1,6 @@
 package com.nextappoficial.springboot.app.invoice.sistem.models.entity;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -34,5 +35,6 @@ public class Region implements Serializable {
 		this.name = name;
 	}
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 }
